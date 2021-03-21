@@ -1,7 +1,8 @@
 IMAGE_NAME=php-8-test
+HASH=$(shell git log -1 --format="%h")
 
 command:
-	@echo "Executing.... "
+	@echo "Executing...  HASH=$(HASH)"
 build:
 	@docker build -t $(IMAGE_NAME) .
 stop:
