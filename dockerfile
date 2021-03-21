@@ -2,6 +2,9 @@ FROM php:8-apache
 
 LABEL maintainer="1232097@gmail.com"
 
+RUN apt-get update -y
+RUN apt-get install vim nano -y
+
 # Download script to install PHP extensions and dependencies
 ADD https://raw.githubusercontent.com/mlocati/docker-php-extension-installer/master/install-php-extensions /usr/local/bin/
 
