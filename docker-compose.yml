@@ -1,0 +1,12 @@
+version: "3"
+
+services:
+  php8:
+    container_name: php8
+    build: .
+    volumes:
+      - ./html:/var/www/html/
+    expose:
+      - "80"
+    ports:
+      - "80:80"

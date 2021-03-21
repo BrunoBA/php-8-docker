@@ -1,0 +1,5 @@
+<?php
+
+echo "From HTML..."
+
+?>
