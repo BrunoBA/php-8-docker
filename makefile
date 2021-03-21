@@ -1,4 +1,5 @@
-IMAGE_NAME=php-8-test
+IMAGE_NAME=php-8
+USERNAME=brunoba93
 HASH=$(shell git log -1 --format="%h")
 
 command:
@@ -14,3 +15,13 @@ run:
 	
 restart: command stop build run
 	@echo "Done!"
+
+login:
+	docker login
+tag: login
+	docker tag $(IMAGE_NAME) $(USERNAME)/$(IMAGE_NAME):$(HASH)
+push: tag
+	@echo "Pulling image to DOCKER HUB"
+	docker push $(USERNAME)/$(IMAGE_NAME):$(HASH)
+
+
